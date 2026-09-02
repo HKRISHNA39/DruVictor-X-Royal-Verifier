@@ -1,0 +1,24 @@
+{
+  "name": "druvictor-x-royal-verifier",
+  "version": "2.0.0",
+  "description": "DruVictor-X Royal Verifier - multilingual recruitment advertisement and website risk assessment.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "job-verification",
+    "recruitment-safety",
+    "scam-detection",
+    "druvictor-x"
+  ],
+  "author": "Hananya Pothabathina",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
