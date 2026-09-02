@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<meta name="description"
+content="DruVictor-X Royal Verifier - multilingual recruitment advertisement and website risk assessment.">
+
+<meta name="author"
+content="Hananya Pothabathina">
+
+<meta name="creator"
+content="Hananya Pothabathina">
+
+<meta name="copyright"
+content="© 2026 Hananya Pothabathina">
+
+<title>DruVictor-X Royal Verifier</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:
+        radial-gradient(
+            circle at top,
+            #17130a 0%,
+            #050505 45%,
+            #020202 100%
+        );
+    color:#ead9a0;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+header{
+    text-align:center;
+    padding:38px 15px 22px;
+}
+
+.logo{
+    font-size:44px;
+    font-weight:900;
+    letter-spacing:3px;
+    color:#d4af37;
+    text-shadow:
+        0 0 25px rgba(212,175,55,.18);
+}
+
+.tag{
+    margin-top:8px;
+    color:#8e7738;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.author{
+    margin-top:14px;
+    color:#d4af37;
+    font-weight:700;
+}
+
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+}
+
+.card{
+    background:
+        linear-gradient(
+            145deg,
+            #101010,
+            #080808
+        );
+
+    border:1px solid #5d491b;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.8);
+}
+
+.modes{
+    display:flex;
+    gap:10px;
+    margin-bottom:26px;
+}
+
+.mode{
+    flex:1;
+
+    padding:15px;
+
+    border-radius:9px;
+
+    border:1px solid #5d491b;
+
+    background:#080808;
+
+    color:#c6ae69;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        .2s ease;
+}
+
+.mode:hover{
+    border-color:#d4af37;
+}
+
+.mode.active{
+    background:
+        linear-gradient(
+            135deg,
+            #9b7317,
+            #f1d05b,
+            #b68a20
+        );
+
+    color:#050505;
+}
+
+h2{
+    color:#d4af37;
+}
+
+.description{
+    color:#a99b72;
+    line-height:1.7;
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    background:#050505;
+
+    color:#f1e4bd;
+
+    border:1px solid #5d491b;
+
+    border-radius:9px;
+
+    padding:16px;
+
+    margin:12px 0;
+
+    font:inherit;
+
+    outline:none;
+
+}
+
+textarea{
+    height:250px;
+    resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#d4af37;
+
+    box-shadow:
+        0 0 0 2px rgba(
+            212,
+            175,
+            55,
+            .08
+        );
+}
+
+.verify{
+
+    width:100%;
+
+    padding:17px;
+
+    border:0;
+
+    border-radius:9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b7317,
+            #f1d05b,
+            #b68a20
+        );
+
+    color:#050505;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:
+        transform .15s ease,
+        opacity .15s ease;
+}
+
+.verify:hover{
+    transform:translateY(-1px);
+}
+
+.verify:disabled{
+    opacity:.6;
+    cursor:wait;
+    transform:none;
+}
+
+.hidden{
+    display:none !important;
+}
+
+.result{
+
+    display:none;
+
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:15px;
+}
+
+.result.safe{
+    background:#07150b;
+    border:1px solid #3d9b5b;
+}
+
+.result.warn{
+    background:#211603;
+    border:1px solid #d69a22;
+}
+
+.result.danger{
+    background:#210806;
+    border:1px solid #d64032;
+}
+
+.result.info{
+    background:#101318;
+    border:1px solid #64748b;
+}
+
+.status{
+    text-align:center;
+    font-size:24px;
+    font-weight:800;
+}
+
+.safeText{
+    color:#55e884;
+}
+
+.warnText{
+    color:#ffd34d;
+}
+
+.dangerText{
+    color:#ff5c50;
+}
+
+.infoText{
+    color:#8fc7ff;
+}
+
+.score{
+    text-align:center;
+    font-size:46px;
+    font-weight:800;
+    margin:15px;
+}
+
+.infoRow{
+    border-bottom:1px solid #29210d;
+    padding:13px 0;
+}
+
+.label{
+    color:#857653;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+}
+
+.value{
+    color:#eee0b5;
+    font-weight:700;
+    margin-top:5px;
+    word-break:break-word;
+}
+
+.indicator{
+    padding:11px;
+    margin:7px 0;
+    border-radius:7px;
+    font-weight:700;
+    line-height:1.45;
+}
+
+.indicator.high{
+    color:#ff6b60;
+    background:#300b08;
+}
+
+.indicator.medium{
+    color:#ffd34d;
+    background:#302305;
+}
+
+.indicator.low{
+    color:#55e884;
+    background:#092616;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:25px;
+}
+
+.actions a{
+    flex:1;
+    padding:15px;
+    border-radius:9px;
+    text-align:center;
+    text-decoration:none;
+    font-weight:800;
+}
+
+.emigrate{
+    background:#d4af37;
+    color:#050505;
+}
+
+.mea{
+    background:#1e6b4d;
+    color:white;
+}
+
+.note{
+    text-align:center;
+    color:#807250;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:20px;
+}
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#665522;
+    font-size:11px;
+}
+
+.small{
+    font-size:12px;
+    color:#8d805f;
+}
+
+@media(max-width:650px){
+
+    .modes,
+    .actions{
+        flex-direction:column;
+    }
+
+    .logo{
+        font-size:34px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .score{
+        font-size:38px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+DruVictor-X
+</div>
+
+<div class="tag">
+ROYAL VERIFIER • SAFE MIGRATION
+</div>
+
+<div class="author">
+By Hananya Krishna
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<div class="modes">
+
+<button
+id="websiteMode"
+class="mode active"
+type="button">
+
+🔗 CHECK WEBSITE
+
+</button>
+
+
+<button
+id="adMode"
+class="mode"
+type="button">
+
+📄 VERIFY ADVERTISEMENT
+
+</button>
+
+</div>
+
+
+<section id="websiteSection">
+
+<h2>
+🔎 Check Job Website
+</h2>
+
+<p class="description">
+
+Enter a website address. DruVictor-X will inspect
+the website from the server and check for selected
+recruitment warning signals.
+
+</p>
+
+<input
+id="websiteURL"
+type="url"
+autocomplete="url"
+placeholder="https://example.com">
+
+<button
+id="websiteButton"
+class="verify"
+type="button">
+
+🔐 SECURELY CHECK WEBSITE
+
+</button>
+
+</section>
+
+
+<section
+id="advertisementSection"
+class="hidden">
+
+<h2>
+📄 Verify Job Advertisement
+</h2>
+
+<p class="description">
+
+Paste the complete job advertisement.
+DruVictor-X checks selected recruitment warning
+patterns and detects MEA/Recruiting Agent licence
+numbers when they appear in the text.
+
+</p>
+
+<textarea
+id="advertisementText"
+placeholder="Paste the complete job advertisement here..."
+maxlength="50000"></textarea>
+
+<div class="small">
+Maximum 50,000 characters.
+</div>
+
+<br>
+
+<button
+id="advertisementButton"
+class="verify"
+type="button">
+
+🔐 VERIFY ADVERTISEMENT
+
+</button>
+
+</section>
+
+
+<div
+id="result"
+class="result"
+aria-live="polite">
+
+</div>
+
+
+</div>
+</div>
+
+
+<footer>
+
+DruVictor-X © 2026
+
+<br><br>
+
+Science & Innovation for Sustainability
+
+</footer>
+
+
+<script>
+
+"use strict";
+
+
+const websiteMode =
+    document.getElementById(
+        "websiteMode"
+    );
+
+const adMode =
+    document.getElementById(
+        "adMode"
+    );
+
+const websiteSection =
+    document.getElementById(
+        "websiteSection"
+    );
+
+const advertisementSection =
+    document.getElementById(
+        "advertisementSection"
+    );
+
+const websiteButton =
+    document.getElementById(
+        "websiteButton"
+    );
+
+const advertisementButton =
+    document.getElementById(
+        "advertisementButton"
+    );
+
+const websiteURL =
+    document.getElementById(
+        "websiteURL"
+    );
+
+const advertisementText =
+    document.getElementById(
+        "advertisementText"
+    );
+
+const result =
+    document.getElementById(
+        "result"
+    );
+
+
+/* =========================================================
+   HTML ESCAPING
+========================================================= */
+
+function escapeHTML(value){
+
+    return String(value ?? "")
+
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+/* =========================================================
+   SAFE DATA HELPERS
+========================================================= */
+
+function safeScore(value){
+
+    const number =
+        Number(value);
+
+    if(!Number.isFinite(number)){
+        return 0;
+    }
+
+    return Math.max(
+        0,
+        Math.min(
+            100,
+            Math.round(number)
+        )
+    );
+}
+
+
+function getRiskClass(score){
+
+    if(score >= 70){
+        return "danger";
+    }
+
+    if(score >= 35){
+        return "warn";
+    }
+
+    return "safe";
+}
+
+
+function getRiskTextClass(score){
+
+    if(score >= 70){
+        return "dangerText";
+    }
+
+    if(score >= 35){
+        return "warnText";
+    }
+
+    return "safeText";
+}
+
+
+function getRiskIcon(score){
+
+    if(score >= 70){
+        return "🚨";
+    }
+
+    if(score >= 35){
+        return "⚠️";
+    }
+
+    return "✅";
+}
+
+
+/* =========================================================
+   RESULT HELPERS
+========================================================= */
+
+function hideResult(){
+
+    result.style.display =
+        "none";
+
+    result.innerHTML =
+        "";
+
+}
+
+
+function loading(message){
+
+    result.className =
+        "result info";
+
+    result.style.display =
+        "block";
+
+    result.innerHTML = `
+
+        <div class="status infoText">
+
+            ⏳ ${escapeHTML(message)}
+
+        </div>
+
+        <div class="note">
+
+            Please wait while DruVictor-X
+            performs the check.
+
+        </div>
+
+    `;
+}
+
+
+function showError(message){
+
+    result.className =
+        "result danger";
+
+    result.style.display =
+        "block";
+
+    result.innerHTML = `
+
+        <div class="status dangerText">
+
+            ❌ VERIFICATION ERROR
+
+        </div>
+
+        <div class="note">
+
+            ${escapeHTML(
+                message ||
+                "An unexpected error occurred."
+            )}
+
+        </div>
+
+    `;
+}
+
+
+/* =========================================================
+   API REQUEST
+========================================================= */
+
+async function postJSON(
+    endpoint,
+    payload
+){
+
+    const controller =
+        new AbortController();
+
+    const timeout =
+        setTimeout(
+            () => controller.abort(),
+            15000
+        );
+
+
+    try{
+
+        const response =
+            await fetch(
+                endpoint,
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(
+                            payload
+                        ),
+
+                    signal:
+                        controller.signal
+                }
+            );
+
+
+        let data = null;
+
+
+        try{
+
+            data =
+                await response.json();
+
+        }
+
+        catch{
+
+            throw new Error(
+                "The server returned an invalid response."
+            );
+
+        }
+
+
+        if(!response.ok){
+
+            throw new Error(
+                data?.error ||
+                "The server rejected the request."
+            );
+        }
+
+
+        return data;
+
+    }
+
+    catch(error){
+
+        if(
+            error.name ===
+            "AbortError"
+        ){
+
+            throw new Error(
+                "The request timed out. Please try again."
+            );
+        }
+
+
+        if(
+            error instanceof TypeError
+        ){
+
+            throw new Error(
+                "Unable to connect to the DruVictor-X server."
+            );
+        }
+
+
+        throw error;
+
+    }
+
+    finally{
+
+        clearTimeout(timeout);
+
+    }
+}
+
+
+/* =========================================================
+   MODE SWITCH
+========================================================= */
+
+websiteMode.onclick = function(){
+
+    websiteSection
+        .classList
+        .remove("hidden");
+
+    advertisementSection
+        .classList
+        .add("hidden");
+
+    websiteMode
+        .classList
+        .add("active");
+
+    adMode
+        .classList
+        .remove("active");
+
+    hideResult();
+
+};
+
+
+adMode.onclick = function(){
+
+    websiteSection
+        .classList
+        .add("hidden");
+
+    advertisementSection
+        .classList
+        .remove("hidden");
+
+    websiteMode
+        .classList
+        .remove("active");
+
+    adMode
+        .classList
+        .add("active");
+
+    hideResult();
+
+};
+
+
+/* =========================================================
+   INDICATORS
+========================================================= */
+
+function renderIndicators(
+    indicators
+){
+
+    if(
+        !Array.isArray(indicators) ||
+        indicators.length === 0
+    ){
+
+        return `
+
+            <div class="indicator low">
+
+                ℹ️ No indicator information was returned.
+
+            </div>
+
+        `;
+    }
+
+
+    return indicators
+        .map(item => {
+
+            const allowedLevels = [
+                "high",
+                "medium",
+                "low"
+            ];
+
+            const level =
+                allowedLevels.includes(
+                    item?.level
+                )
+                ? item.level
+                : "low";
+
+
+            const icon =
+                typeof item?.icon === "string"
+                    ? item.icon
+                    : "ℹ️";
+
+
+            const text =
+                typeof item?.text === "string"
+                    ? item.text
+                    : "Warning indicator detected.";
+
+
+            return `
+
+                <div class="indicator ${level}">
+
+                    ${escapeHTML(icon)}
+
+                    ${escapeHTML(text)}
+
+                </div>
+
+            `;
+
+        })
+        .join("");
+
+}
+
+
+/* =========================================================
+   ADVERTISEMENT VERIFICATION
+========================================================= */
+
+advertisementButton.onclick =
+async function(){
+
+    const text =
+        advertisementText.value.trim();
+
+
+    if(!text){
+
+        showError(
+            "Please paste the complete job advertisement."
+        );
+
+        return;
+    }
+
+
+    if(text.length > 50000){
+
+        showError(
+            "The advertisement is too long."
+        );
+
+        return;
+    }
+
+
+    advertisementButton.disabled =
+        true;
+
+
+    loading(
+        "ANALYZING ADVERTISEMENT..."
+    );
+
+
+    try{
+
+        const data =
+            await postJSON(
+                "/api/check-advertisement",
+                {
+                    text:text
+                }
+            );
+
+
+        showAdvertisementResult(
+            data
+        );
+
+    }
+
+    catch(error){
+
+        showError(
+            error.message
+        );
+
+    }
+
+    finally{
+
+        advertisementButton.disabled =
+            false;
+
+    }
+
+};
+
+
+/* =========================================================
+   ADVERTISEMENT RESULT
+========================================================= */
+
+function showAdvertisementResult(
+    data
+){
+
+    const score =
+        safeScore(
+            data?.riskScore
+        );
+
+
+    const css =
+        getRiskClass(
+            score
+        );
+
+
+    const textClass =
+        getRiskTextClass(
+            score
+        );
+
+
+    const icon =
+        getRiskIcon(
+            score
+        );
+
+
+    const verdict =
+        typeof data?.verdict === "string"
+            ? data.verdict
+            : "RISK ASSESSMENT";
+
+
+    const language =
+        typeof data?.language === "string"
+            ? data.language
+            : "Unknown";
+
+
+    const licence =
+        data?.meaLicence &&
+        typeof data.meaLicence === "object"
+            ? data.meaLicence
+            : {
+                found:false,
+                number:"",
+                status:"NOT FOUND"
+            };
+
+
+    let licenceHTML;
+
+
+    if(!licence.found){
+
+        licenceHTML = `
+
+            <span class="dangerText">
+
+                NOT FOUND
+
+            </span>
+
+        `;
+
+    }
+
+    else{
+
+        licenceHTML = `
+
+            ${escapeHTML(
+                licence.number
+            )}
+
+            <br>
+
+            <span class="warnText">
+
+                ${escapeHTML(
+                    licence.status ||
+                    "VERIFY OFFICIALLY"
+                )}
+
+            </span>
+
+        `;
+    }
+
+
+    const indicatorsHTML =
+        renderIndicators(
+            data?.indicators
+        );
+
+
+    result.className =
+        "result " + css;
+
+    result.style.display =
+        "block";
+
+
+    result.innerHTML = `
+
+        <div class="status ${textClass}">
+
+            ${icon}
+
+            ${escapeHTML(
+                verdict
+            )}
+
+        </div>
+
+
+        <div class="score ${textClass}">
+
+            ${score}/100
+
+        </div>
+
+
+        <div class="infoRow">
+
+            <div class="label">
+
+                Detected Language
+
+            </div>
+
+            <div class="value">
+
+                ${escapeHTML(
+                    language
+                )}
+
+            </div>
+
+        </div>
+
+
+        <div class="infoRow">
+
+            <div class="label">
+
+                MEA / Recruiting Agent Licence
+
+            </div>
+
+            <div class="value">
+
+                ${licenceHTML}
+
+            </div>
+
+        </div>
+
+
+        <div class="infoRow">
+
+            <div class="label">
+
+                Risk Indicators
+
+            </div>
+
+            <div class="value">
+
+                ${indicatorsHTML}
+
+            </div>
+
+        </div>
+
+
+        <div class="note">
+
+            A licence number appearing in an
+            advertisement is not by itself proof
+            that the recruiting agent is genuine.
+
+            <br><br>
+
+            Always verify registration/status
+            through official government sources.
+
+        </div>
+
+
+        <div class="actions">
+
+            <a
+            class="emigrate"
+            href="https://emigrate.gov.in/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+                🇮🇳 CHECK eMIGRATE
+
+            </a>
+
+
+            <a
+            class="mea"
+            href="https://www.mea.gov.in/ras.htm"
+            target="_blank"
+            rel="noopener noreferrer">
+
+                🇮🇳 MEA RAs
+
+            </a>
+
+        </div>
+
+    `;
+
+
+    result.scrollIntoView({
+        behavior:"smooth",
+        block:"nearest"
+    });
+
+}
+
+
+/* =========================================================
+   WEBSITE VERIFICATION
+========================================================= */
+
+websiteButton.onclick =
+async function(){
+
+    const url =
+        websiteURL.value.trim();
+
+
+    if(!url){
+
+        showError(
+            "Please enter a website URL."
+        );
+
+        return;
+    }
+
+
+    let normalizedURL =
+        url;
+
+
+    if(
+        !/^https?:\/\//i.test(
+            normalizedURL
+        )
+    ){
+
+        normalizedURL =
+            "https://" +
+            normalizedURL;
+
+    }
+
+
+    try{
+
+        const parsed =
+            new URL(
+                normalizedURL
+            );
+
+
+        if(
+            parsed.protocol !==
+                "http:" &&
+            parsed.protocol !==
+                "https:"
+        ){
+
+            showError(
+                "Only HTTP and HTTPS websites are supported."
+            );
+
+            return;
+        }
+
+    }
+
+    catch{
+
+        showError(
+            "Invalid website URL."
+        );
+
+        return;
+    }
+
+
+    websiteButton.disabled =
+        true;
+
+
+    loading(
+        "SECURELY INSPECTING WEBSITE..."
+    );
+
+
+    try{
+
+        const data =
+            await postJSON(
+                "/api/check-website",
+                {
+                    url:normalizedURL
+                }
+            );
+
+
+        showWebsiteResult(
+            data
+        );
+
+    }
+
+    catch(error){
+
+        showError(
+            error.message
+        );
+
+    }
+
+    finally{
+
+        websiteButton.disabled =
+            false;
+
+    }
+
+};
+
+
+/* =========================================================
+   WEBSITE RESULT
+========================================================= */
+
+function showWebsiteResult(
+    data
+){
+
+    const score =
+        safeScore(
+            data?.riskScore
+        );
+
+
+    const css =
+        getRiskClass(
+            score
+        );
+
+
+    const textClass =
+        getRiskTextClass(
+            score
+        );
+
+
+    const icon =
+        getRiskIcon(
+            score
+        );
+
+
+    const verdict =
+        typeof data?.verdict === "string"
+            ? data.verdict
+            : "RISK ASSESSMENT";
+
+
+    const url =
+        typeof data?.url === "string"
+            ? data.url
+            : "Unavailable";
+
+
+    const inspection =
+        typeof data?.inspection === "string"
+            ? data.inspection
+            : "Unavailable";
+
+
+    const responseStatus =
+        typeof data?.responseStatus === "string"
+            ? data.responseStatus
+            : "Unknown";
+
+
+    const government =
+        data?.governmentDomain === true;
+
+
+    const indicatorsHTML =
+        renderIndicators(
+            data?.indicators
+        );
+
+
+    result.className =
+        "result " + css;
+
+    result.style.display =
+        "block";
+
+
+    result.innerHTML = `
+
+        <div class="status ${textClass}">
+
+            ${icon}
+
+            ${escapeHTML(
+                verdict
+            )}
+
+        </div>
+
+
+        <div class="score ${textClass}">
+
+            ${score}/100
+
+        </div>
+
+
+        <div class="infoRow">
+
+            <div class="label">
+
+                Website
+
+            </div>
+
+            <div class="value">
+
+                ${escapeHTML(
+                    url
+                )}
+
+            </div>
+
+        </div>
+
+
+        <div class="infoRow">
+
+            <div class="label">
+
+                Government Domain
+
+            </div>
+
+            <div class="value">
+
+                ${government
+                    ? "YES — .gov.in DOMAIN PATTERN"
+                    : "NO"}
+
+            </div>
+
+        </div>
+
+
+        <div class="infoRow">
+
+            <div class="label">
+
+                Website Inspection
+
+            </div>
+
+            <div class="value">
+
+                ${escapeHTML(
+                    inspection
+                )}
+
+                <br><br>
+
+                HTTP status:
+                ${escapeHTML(
+                    responseStatus
+                )}
+
+            </div>
+
+        </div>
+
+
+        <div class="infoRow">
+
+            <div class="label">
+
+                Risk Indicators
+
+            </div>
+
+            <div class="value">
+
+                ${indicatorsHTML}
+
+            </div>
+
+        </div>
+
+
+        <div class="note">
+
+            DruVictor-X performs a server-side
+            inspection of the target website.
+
+            <br><br>
+
+            A low score does not guarantee that a
+            website, employer or recruiter is genuine.
+            Always independently verify important
+            employment and migration claims.
+
+        </div>
+
+
+        <div class="actions">
+
+            <a
+            class="emigrate"
+            href="https://emigrate.gov.in/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+                🇮🇳 eMIGRATE
+
+            </a>
+
+
+            <a
+            class="mea"
+            href="https://www.mea.gov.in/ras.htm"
+            target="_blank"
+            rel="noopener noreferrer">
+
+                🇮🇳 MEA RAs
+
+            </a>
+
+        </div>
+
+    `;
+
+
+    result.scrollIntoView({
+        behavior:"smooth",
+        block:"nearest"
+    });
+
+}
+
+
+/* =========================================================
+   ENTER KEY SUPPORT
+========================================================= */
+
+websiteURL.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            event.preventDefault();
+
+            websiteButton.click();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+websiteSection
+    .classList
+    .remove("hidden");
+
+advertisementSection
+    .classList
+    .add("hidden");
+
+websiteMode
+    .classList
+    .add("active");
+
+adMode
+    .classList
+    .remove("active");
+
+</script>
+
+</body>
+
+</html>
